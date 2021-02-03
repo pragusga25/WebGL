@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
+#navbar{
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  top:80%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:80%;
+  border-radius: 5px;
+  padding: 10px 0 10px 0;
+}
+
+.fas{
+  color: #40ff00ac;
+  box-shadow: 0 12px 10px -8px rgba(141, 241, 60, 0.707);
+}
+
+.appear{
+  color: rgb(168, 247, 146);
+  font-family: 'Kanit', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#name{
+  position: absolute;
+  font-size: 60px;
+  font-family: 'Kanit',sans-serif;
+  color: #fff;
+  left:60%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+#name p span{
+  font-family: 'Playfair Display',serif;
+}
