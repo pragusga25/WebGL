@@ -1,13 +1,46 @@
-// import _ from 'lodash';
+import * as THREE from 'three';
 
-// const component = () => {
-//   const element = document.createElement('div');
+const home = document.getElementById('home');
 
-//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
 
-//   return element;
-// };
+const renderer = new THREE.WebGLRenderer();
+renderer.setClearColor('#121212');
+renderer.setSize(window.innerWidth, window.innerHeight);
+home.appendChild(renderer.domElement);
 
-// document.body.appendChild(component());
+const cubegeo = new THREE.OctahedronGeometry();
+const myTexture = new THREE.TextureLoader().load('../texture/texturea.jpg');
+const material = new THREE.MeshBasicMaterial({
+  color: 0xfe4a49,
+  wireframe: true,
+  // map: myTexture,
+});
+const cube = new THREE.Mesh(cubegeo, material);
+cube.position.set(-3, 1, 0);
+scene.add(cube);
 
-console.log('Hello Wordl');
+camera.position.z = 5;
+
+window.addEventListener('resize', function () {
+  renderer.setSize(this.window.innerWidth, this.window.innerHeight);
+  camera.aspect = this.window.innerWidth / this.window.innerHeight;
+  camera.updateProjectionMatrix();
+});
+
+const animate = () => {
+  requestAnimationFrame(animate);
+
+  // cube.rotateY(0.02);
+  cube.rotateX(0.02);
+  // cube.rotateZ(0.02);
+  renderer.render(scene, camera);
+};
+
+animate();
