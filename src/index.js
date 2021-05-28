@@ -20,7 +20,6 @@ const myTexture = new THREE.TextureLoader().load('../texture/texturea.jpg');
 const material = new THREE.MeshBasicMaterial({
   color: 0xfe4a49,
   wireframe: true,
-  // map: myTexture,
 });
 const cube = new THREE.Mesh(cubegeo, material);
 cube.position.set(-3, 1, 0);
