@@ -2,7 +2,6 @@ const menus = document.querySelectorAll('.menu');
 menus.forEach((menu) => {
   const child = menu.childNodes[0];
   menu.addEventListener('mouseover', () => {
-    console.log('enter');
     const text = menu.getAttribute('nama');
     menu.innerHTML = `${text}`;
   });
