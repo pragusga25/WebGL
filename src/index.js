@@ -36,9 +36,9 @@ window.addEventListener('resize', function () {
 const animate = () => {
   requestAnimationFrame(animate);
 
-  // cube.rotateY(0.02);
+  // cube.rotateY(0.02)
   cube.rotateX(0.02);
-  // cube.rotateZ(0.02);
+  // cube.rotateZ(0.02)
   renderer.render(scene, camera);
 };
 
